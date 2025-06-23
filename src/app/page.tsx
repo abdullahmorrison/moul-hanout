@@ -1,102 +1,197 @@
+"use client";
+
+import Button from "@/components/Button";
+import Nav from "@/components/Nav";
+import Testamonial from "@/components/Testamonial";
+import testimonials from "@/lib/testamonials";
+import menuHighlights from "@/lib/menu-highlights";
 import Image from "next/image";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <div className="flex h-screen flex-col">
+      <Nav />
+      <header className="bg-primary text-white">
+        <div className="flex items-center justify-around p-10">
+          <div className="flex flex-col items-start gap-5">
+            <h1 className="text-8xl font-bold">Halal Moroccan Cuisine</h1>
+            <h2 className="text-8xl font-bold">مول الحانوت</h2>
+            <Button path="/menu" btnText="View Menu" />
+          </div>
+          <div className="relative mt-10 aspect-[4/3] w-full max-w-3xl">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/moul-hanout-meal-2.jpg"
+              alt="Moroccan Cuisine"
+              className="absolute bottom-0 left-0 rounded-lg shadow-xl"
+              width={400}
+              height={300}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <Image
+              src="/moul-hanout-meal-1.jpg"
+              alt="Moroccan Cuisine"
+              className="absolute top-0 right-0 z-10 rounded-lg shadow-xl"
+              width={400}
+              height={300}
+            />
+          </div>
         </div>
+        <div className="flex w-full overflow-hidden py-10 uppercase">
+          <ul className="flex w-screen shrink-0 animate-infinite-scroll justify-around text-3xl font-bold">
+            <li>Grocery</li>
+            <li>Deli Meals</li>
+            <li>Bakery</li>
+            <li>Sandwiches</li>
+            <li>Couscous</li>
+            <li>Takeout</li>
+          </ul>
+          <ul className="flex w-screen shrink-0 animate-infinite-scroll justify-around text-3xl font-bold">
+            <li>Grocery</li>
+            <li>Deli Meals</li>
+            <li>Bakery</li>
+            <li>Sandwiches</li>
+            <li>Couscous</li>
+            <li>Takeout</li>
+          </ul>
+        </div>
+      </header>
+
+      <main>
+        <section className="mt-10 flex min-h-200 flex-col items-center justify-center space-y-6 p-4">
+          <h2 className="mb-8 text-5xl font-semibold">About</h2>
+          <div className="max-w-8xl mb-6 flex flex-wrap justify-center gap-10 space-x-4">
+            <Image
+              src="/moul-hanout-about.png"
+              alt="Moul Hanout Logo"
+              className="rounded-xl shadow-lg"
+              width={400}
+              height={400}
+            />
+            <p className="max-w-2xl text-lg">
+              Experience the magic of Morocco at Moul Hanout, where the vibrant
+              spirit of the souks meets the warmth of a family-owned eatery.
+              Nestled within our doors, you&apos;ll find more than just a
+              restaurant — we&apos;re a bustling grocery hub, a cozy coffee bar,
+              and a delightful pastry haven, all infused with the rich flavors
+              and traditions of Morocco. Indulge in our signature sandwiches and
+              savory tagines, crafted with care and bursting with authentic
+              Moroccan spices. From the moment you step inside, you&apos;ll be
+              transported to a world of culinary delights, where every dish
+              tells a story and every meal is a celebration of Moroccan
+              hospitality and heritage. Join us at Moul Hanout and embark on a
+              culinary journey like no other.
+            </p>
+          </div>
+        </section>
+
+        <section className="flex min-h-200 flex-col items-center justify-center space-y-6 bg-primary p-10 text-white">
+          <h2 className="mb-4 text-5xl font-semibold">Menu Highlights</h2>
+          <div className="min-h-[300px] w-full p-6">
+            <Carousel
+              responsive={{
+                desktop: {
+                  breakpoint: { max: 3000, min: 1768 },
+                  items: 5,
+                  slidesToSlide: 3, // optional, default to 1.
+                },
+                laptop: {
+                  breakpoint: { max: 1768, min: 1024 },
+                  items: 3,
+                  slidesToSlide: 2, // optional, default to 1.
+                },
+                tablet: {
+                  breakpoint: { max: 1024, min: 464 },
+                  items: 2,
+                  slidesToSlide: 2, // optional, default to 1.
+                },
+                mobile: {
+                  breakpoint: { max: 464, min: 0 },
+                  items: 1,
+                  slidesToSlide: 1, // optional, default to 1.
+                },
+              }}
+              infinite={true}
+              removeArrowOnDeviceType={["tablet", "mobile"]}
+              autoPlay={true}
+              autoPlaySpeed={5000}
+            >
+              {menuHighlights.map((item, index) => (
+                <div key={index} className="relative flex justify-center">
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    className="aspect-square rounded-lg object-cover shadow-xl"
+                    width={400}
+                    height={300}
+                    draggable={false}
+                  />
+                </div>
+              ))}
+            </Carousel>
+          </div>
+          <Button path="/menu" btnText="Explore Full Menu" />
+        </section>
+
+        <section className="flex min-h-200 flex-wrap items-center justify-center gap-20 p-10">
+          <div className="flex max-w-5xl flex-col items-center space-y-6">
+            <h2 className="text-3xl font-semibold">Catering</h2>
+            <p className="w-full max-w-2xl text-lg">
+              Elevate your next event with the rich flavors of Morocco. At Moul
+              Hanout, we offer catering services that bring the essence of our
+              restaurant to your gatherings. Whether it&apos;s a wedding,
+              corporate event, or family celebration, our catering menu features
+              a variety of Moroccan dishes, from savory tagines to delectable
+              hospitality of Moroccan cuisine. Let us take care of the food
+              while you enjoy your special occasion.
+            </p>
+          </div>
+          <div className="flex max-w-5xl flex-col items-center space-y-6">
+            <h2 className="text-3xl font-semibold">Grocery</h2>
+            <p className="w-full max-w-2xl text-lg">
+              Explore our grocery section, where you can find a wide range of
+              authentic Moroccan ingredients. From exotic spices to specialty
+              products, we have everything you need to recreate the flavors of
+              Morocco in your own kitchen. Our knowledgeable staff is always
+              available to help you find what you need and provide cooking tips.
+            </p>
+          </div>
+        </section>
+
+        <section className="flex min-h-200 flex-col items-center justify-center space-y-6 p-4">
+          <h2 className="mb-10 text-3xl font-semibold">Testimonials</h2>
+          <div className="flex flex-wrap justify-center gap-20">
+            {testimonials.map((testimonial, index) => (
+              <Testamonial
+                key={index}
+                name={testimonial.name}
+                rating={testimonial.rating}
+                testimonial={testimonial.testimonial}
+              />
+            ))}
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      <footer className="mt-auto flex flex-wrap items-center justify-center gap-10 bg-primary p-10 text-white">
+        <address>
+          <h2 className="mb-4 text-3xl font-semibold">Visit Us</h2>
+          <p>
+            <b>Address:</b> 1581 Bank St, Ottawa, ON K1H 7Z3
+          </p>
+          <p>
+            <b>Hours</b>: We Are Open Everyday from 11 AM - 11 PM
+          </p>
+          <p>
+            <b>Phone:</b> <a href="tel:+6132601212">(613) 260-1212</a>
+          </p>
+        </address>
+        <iframe
+          width="500"
+          height="350"
+          loading="lazy"
+          src={`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJsQM-FwAGzkwRX382EA2eW7Y&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`}
+        ></iframe>
       </footer>
     </div>
   );
