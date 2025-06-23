@@ -4,7 +4,7 @@ This is the website for the restaurant Moul Hanout, located in Ottawa Ontario Ca
 ## Setup
 - Clone the repository
 ```bash
-https://github.com/abdullahmorrison/moul-hanout.git
+git clone https://github.com/abdullahmorrison/moul-hanout.git
 ```
 - Navigate to the project directory
 ```bash
