@@ -12,7 +12,7 @@ export default function Nav() {
         </div>
       </Link>
 
-      <div className="flex items-center justify-center space-x-4 text-xl">
+      <div className="flex items-center justify-center space-x-4 text-2xl">
         <Link href={routes.home} className="hover:underline">
           Home
         </Link>
