@@ -1,7 +1,6 @@
 "use client";
 
 import Button from "@/components/Button";
-import Nav from "@/components/Nav";
 import Testamonial from "@/components/Testamonial";
 import testimonials from "@/lib/testamonials";
 import menuHighlights from "@/lib/menu-highlights";
@@ -13,7 +12,6 @@ import routes from "@/lib/routes";
 export default function Home() {
   return (
     <div className="flex h-screen flex-col">
-      <Nav />
       <header className="bg-primary text-white">
         <div className="flex items-center justify-around p-10">
           <div className="flex flex-col items-start gap-5">
