@@ -8,6 +8,7 @@ import menuHighlights from "@/lib/menu-highlights";
 import Image from "next/image";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import routes from "@/lib/routes";
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
           <div className="flex flex-col items-start gap-5">
             <h1 className="text-8xl font-bold">Halal Moroccan Cuisine</h1>
             <h2 className="text-8xl font-bold">مول الحانوت</h2>
-            <Button path="/menu" btnText="View Menu" />
+            <Button path={routes.menu} btnText="View Menu" />
           </div>
           <div className="relative mt-10 aspect-[4/3] w-full max-w-3xl">
             <Image
@@ -130,7 +131,7 @@ export default function Home() {
               ))}
             </Carousel>
           </div>
-          <Button path="/menu" btnText="Explore Full Menu" />
+          <Button path={routes.menu} btnText="Explore Full Menu" />
         </section>
 
         <section className="flex min-h-200 flex-wrap items-center justify-center gap-20 p-10">

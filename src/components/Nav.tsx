@@ -1,5 +1,6 @@
 import Link from "next/link";
 import SocialMediaLinks from "./SocialMediaLinks";
+import routes from "@/lib/routes";
 
 export default function Nav() {
   return (
@@ -12,19 +13,19 @@ export default function Nav() {
       </Link>
 
       <div className="flex items-center justify-center space-x-4 text-xl">
-        <Link href="/" className="hover:underline">
+        <Link href={routes.home} className="hover:underline">
           Home
         </Link>
-        <Link href="/menu" className="hover:underline">
+        <Link href={routes.menu} className="hover:underline">
           Menu
         </Link>
-        <Link href="/grocery" className="hover:underline">
+        <Link href={routes.grocery} className="hover:underline">
           Grocery
         </Link>
-        <Link href="/catering" className="hover:underline">
+        <Link href={routes.catering} className="hover:underline">
           Catering
         </Link>
-        <Link href="/contact" className="hover:underline">
+        <Link href={routes.contact} className="hover:underline">
           Contact
         </Link>
         <SocialMediaLinks />
