@@ -2,8 +2,8 @@ import menu from "@/lib/menu";
 
 export default function Menu() {
   return (
-    <div className="flex h-screen bg-primary p-10 ">
-      <main className="mx-auto flex w-full max-w-6xl flex-col items-center rounded-sm bg-secondary p-20 text-black ">
+    <div className="flex min-h-screen bg-primary p-10 ">
+      <main className="mx-auto flex w-full max-w-6xl flex-col items-center rounded-sm bg-secondary px-6 py-10 md:p-20 text-black">
         <h1 className="text-5xl font-bold pb-20">Menu</h1>
         <div className="grid w-full grid-cols-1 gap-10 md:grid-cols-2">
           {menu.map((category) => (

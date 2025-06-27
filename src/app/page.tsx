@@ -86,6 +86,7 @@ export default function Home() {
 
         <section className="flex min-h-200 flex-col items-center justify-center space-y-6 bg-primary p-10 text-white">
           <h2 className="mb-4 text-5xl font-semibold">Menu Highlights</h2>
+          <p className="mb-6 max-w-2xl text-lg">View our Morrocan meals</p>
           <div className="min-h-[300px] w-full p-6">
             <Carousel
               responsive={{
