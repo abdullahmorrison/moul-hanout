@@ -20,19 +20,19 @@ export default function Nav() {
         <div
           className={`${isOpen ? "block" : "max-md:opacity-0"} absolute top-25 left-0 z-50 flex w-full flex-col items-center justify-center gap-4 bg-white p-4 transition-all duration-300 ease-in-out md:static md:w-auto md:flex-row md:items-center md:justify-center md:bg-transparent md:p-0`}
         >
-          <Link href={routes.home} className="hover:underline">
+          <Link href={routes.home} className="hover:underline" onClick={() => setIsOpen(false)}>
             Home
           </Link>
-          <Link href={routes.menu} className="hover:underline">
+          <Link href={routes.menu} className="hover:underline" onClick={() => setIsOpen(false)}>
             Menu
           </Link>
-          <Link href={routes.grocery} className="hover:underline">
+          <Link href={routes.grocery} className="hover:underline" onClick={() => setIsOpen(false)}>
             Grocery
           </Link>
-          <Link href={routes.catering} className="hover:underline">
+          <Link href={routes.catering} className="hover:underline" onClick={() => setIsOpen(false)}>
             Catering
           </Link>
-          <Link href={routes.contact} className="hover:underline">
+          <Link href={routes.contact} className="hover:underline" onClick={() => setIsOpen(false)}>
             Contact
           </Link>
           <SocialMediaLinks />
