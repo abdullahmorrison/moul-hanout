@@ -2,6 +2,7 @@
 
 :root {
   --primary: #40BAD2;
+  --primary-dark: #2A8FBB;
   --secondary: #FFFFFF;
 
   --primary-text: #FFFFFF;
@@ -9,6 +10,7 @@
 
 @theme inline {
   --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
   --color-secondary: var(--secondary);
 
   --color-primary-text: var(--primary-text);
