@@ -14,31 +14,33 @@ export default function Home() {
   return (
     <div className="flex h-screen flex-col">
       <header className="bg-primary text-white">
-        <div className="flex items-center justify-around p-10">
+        <div className="flex items-center justify-around px-4 py-10 max-md:flex-wrap md:px-10">
           <div className="flex flex-col items-start gap-5">
-            <h1 className="text-8xl font-bold">Halal Moroccan Cuisine</h1>
-            <h2 className="text-8xl font-bold">مول الحانوت</h2>
+            <h1 className="text-6xl font-bold xl:text-8xl">
+              Halal Moroccan Cuisine
+            </h1>
+            <h2 className="text-6xl font-bold xl:text-8xl">مول الحانوت</h2>
             <Button path={routes.menu} btnText="View Menu" />
           </div>
-          <div className="relative mt-10 aspect-[4/3] w-full max-w-3xl">
-            <Image
-              src="/moul-hanout-meal-2.jpg"
-              alt="Moroccan Cuisine"
-              className="absolute bottom-0 left-0 rounded-lg shadow-xl"
-              width={400}
-              height={300}
-            />
-            <Image
-              src="/moul-hanout-meal-1.jpg"
-              alt="Moroccan Cuisine"
-              className="absolute top-0 right-0 z-10 rounded-lg shadow-xl"
-              width={400}
-              height={300}
-            />
+          <div className="relative mt-10 aspect-[1/1] w-full max-w-md xl:max-w-2xl">
+            <div className="absolute bottom-0 left-0 aspect-auto h-[60%] w-[60%] rounded-lg shadow-xl">
+              <Image
+                src="/moul-hanout-meal-2.jpg"
+                alt="Moroccan Cuisine"
+                fill
+              />
+            </div>
+            <div className="absolute top-0 right-0 z-10 h-[65%] w-[65%] rounded-lg shadow-xl">
+              <Image
+                src="/moul-hanout-meal-1.jpg"
+                alt="Moroccan Cuisine"
+                fill
+              />
+            </div>
           </div>
         </div>
         <div className="flex w-full overflow-hidden py-10 uppercase">
-          <ul className="flex w-screen shrink-0 animate-infinite-scroll justify-around text-3xl font-bold">
+          <ul className="flex w-[175vw] shrink-0 animate-infinite-scroll justify-around text-sm font-bold sm:text-sm md:w-screen md:text-xl xl:text-3xl">
             <li>Grocery</li>
             <li>Deli Meals</li>
             <li>Bakery</li>
@@ -46,7 +48,7 @@ export default function Home() {
             <li>Couscous</li>
             <li>Takeout</li>
           </ul>
-          <ul className="flex w-screen shrink-0 animate-infinite-scroll justify-around text-3xl font-bold">
+          <ul className="flex w-[175vw] shrink-0 animate-infinite-scroll justify-around text-sm font-bold sm:text-sm md:w-screen md:text-xl xl:text-3xl">
             <li>Grocery</li>
             <li>Deli Meals</li>
             <li>Bakery</li>
@@ -86,7 +88,9 @@ export default function Home() {
         </section>
 
         <section className="flex min-h-200 flex-col items-center justify-center space-y-6 bg-primary p-10 text-white">
-          <h2 className="mb-4 text-5xl font-semibold">Menu Highlights</h2>
+          <h2 className="mb-4 text-center text-5xl font-semibold">
+            Menu Highlights
+          </h2>
           <p className="mb-6 max-w-2xl text-lg">View our Morrocan meals</p>
           <div className="min-h-[300px] w-full p-6">
             <Carousel
@@ -159,7 +163,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="flex min-h-200 flex-col items-center justify-center space-y-6 p-4">
+        <section className="my-10 flex min-h-200 flex-col items-center justify-center space-y-6 p-4">
           <h2 className="mb-10 text-3xl font-semibold">Testimonials</h2>
           <div className="flex flex-wrap justify-center gap-20">
             {testimonials.map((testimonial, index) => (
