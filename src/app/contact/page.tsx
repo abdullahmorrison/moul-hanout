@@ -3,13 +3,15 @@ import Footer from "@/components/Footer";
 export default function Contact() {
   return (
     <div className="flex min-h-screen flex-col">
-      <h2 className="mt-10 text-center text-5xl font-bold md:my-10">
+      <h2 className="mt-10 text-center text-5xl font-bold text-primary md:my-10">
         Contact Us
       </h2>
 
       <div className="my-6 flex flex-col items-center justify-center gap-6 px-4 md:flex-row md:items-start">
         <div className="mt-10 flex max-w-xl flex-col space-y-6">
-          <h3 className="text-3xl font-semibold">Become a Franchisee</h3>
+          <h3 className="text-3xl font-semibold text-primary">
+            Become a Franchisee
+          </h3>
           <p className="max-w-2xl text-lg">
             If you&apos;re considering becoming a franchisee with Moul Hanout,
             we&apos;re here to guide you every step of the way. From initial

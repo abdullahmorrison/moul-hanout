@@ -1,10 +1,12 @@
-import Image from 'next/image';
+import Image from "next/image";
 
 export default function Catering() {
   return (
-    <div className="flex items-center justify-center p-4 max-lg:flex-wrap gap-10">
+    <div className="flex items-center justify-center gap-10 p-4 max-lg:flex-wrap">
       <div className="flex flex-col">
-        <h2 className="mt-10 text-5xl font-bold md:my-10">We Cater!</h2>
+        <h2 className="mt-10 text-5xl font-bold text-primary md:my-10">
+          We Cater!
+        </h2>
         <p className="my-6 max-w-2xl text-lg">
           Let us handle the food for your next event with our authentic Moroccan
           dishes made right here in Ottawa. From small gatherings to large
@@ -41,7 +43,10 @@ export default function Catering() {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="number" className="mb-2 block text-lg font-semibold">
+            <label
+              htmlFor="number"
+              className="mb-2 block text-lg font-semibold"
+            >
               Phone Number <span className="text-red-500">*</span>
             </label>
             <input
@@ -78,7 +83,7 @@ export default function Catering() {
         </form>
       </div>
       <div className="flex flex-col space-y-6">
-        <h2 className="text-3xl font-semibold">Why Choose Us?</h2>
+        <h2 className="text-3xl font-semibold text-primary">Why Choose Us?</h2>
         <p className="max-w-2xl text-lg">
           At Moul Hanout, we pride ourselves on providing authentic Moroccan
           cuisine made with the freshest ingredients. Our catering services are
