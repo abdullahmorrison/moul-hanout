@@ -3,13 +3,15 @@ import Link from "next/link";
 import SocialMediaLinks from "./SocialMediaLinks";
 import routes from "@/lib/routes";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <>
-      <nav className="relative flex items-center justify-between bg-secondary p-6 text-2xl font-bold text-primary shadow-md">
+      <nav className="relative flex shrink-0 items-center justify-between bg-secondary p-6 text-2xl font-bold text-primary shadow-md">
         <Link href="/" className="text-lg">
           <div className="flex h-15 w-15 flex-col items-center justify-center rounded-[50%] border-2 border-white bg-primary p-2 text-white outline-2 outline-primary md:h-20 md:w-20">
             <span>حلال</span>
@@ -22,35 +24,35 @@ export default function Nav() {
         >
           <Link
             href={routes.home}
-            className="hover:underline"
+            className={`${pathname === routes.home ? "text-primary-dark" : undefined} hover:text-primary-dark`}
             onClick={() => setIsOpen(false)}
           >
             Home
           </Link>
           <Link
             href={routes.menu}
-            className="hover:underline"
+            className={`${pathname === routes.menu ? "text-primary-dark" : undefined} hover:text-primary-dark`}
             onClick={() => setIsOpen(false)}
           >
             Menu
           </Link>
           <Link
             href={routes.grocery}
-            className="hover:underline"
+            className={`${pathname === routes.grocery ? "text-primary-dark" : undefined} hover:text-primary-dark`}
             onClick={() => setIsOpen(false)}
           >
             Grocery
           </Link>
           <Link
             href={routes.catering}
-            className="hover:underline"
+            className={`${pathname === routes.catering ? "text-primary-dark" : undefined} hover:text-primary-dark`}
             onClick={() => setIsOpen(false)}
           >
             Catering
           </Link>
           <Link
             href={routes.contact}
-            className="hover:underline"
+            className={`${pathname === routes.contact ? "text-primary-dark" : undefined} hover:text-primary-dark`}
             onClick={() => setIsOpen(false)}
           >
             Contact
