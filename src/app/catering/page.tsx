@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Catering() {
   return (
-    <div className="flex items-center justify-center p-4 flex-wrap gap-6">
+    <div className="flex items-center justify-center p-4 max-lg:flex-wrap gap-10">
       <div className="flex flex-col">
         <h2 className="mt-10 text-5xl font-bold md:my-10">We Cater!</h2>
         <p className="my-6 max-w-2xl text-lg">
@@ -77,13 +77,13 @@ export default function Catering() {
           </button>
         </form>
       </div>
-      <div className="flex flex-col space-y-6 p-10">
+      <div className="flex flex-col space-y-6">
         <h2 className="text-3xl font-semibold">Why Choose Us?</h2>
         <p className="max-w-2xl text-lg">
           At Moul Hanout, we pride ourselves on providing authentic Moroccan
           cuisine made with the freshest ingredients. Our catering services are
           designed to bring the rich flavors of Morocco to your events, ensuring
-          a memorable experience for you and your guests. Whether it's a
+          a memorable experience for you and your guests. Whether it&apos;s a
           wedding, corporate event, or family gathering, we are here to make it
           special.
         </p>
