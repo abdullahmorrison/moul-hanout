@@ -1,5 +1,4 @@
 "use client";
-
 import Button from "@/components/Button";
 import Testamonial from "@/components/Testamonial";
 import testimonials from "@/lib/testamonials";
@@ -9,10 +8,11 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import routes from "@/lib/routes";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex h-screen flex-col">
+    <div className="flex min-h-screen flex-col">
       <header className="bg-primary text-white">
         <div className="flex items-center justify-around px-4 py-10 max-md:flex-wrap md:px-10">
           <div className="flex flex-col items-start gap-5">
@@ -61,7 +61,7 @@ export default function Home() {
 
       <main>
         <section className="mt-10 flex min-h-200 flex-col items-center justify-center space-y-6 p-4">
-          <h2 className="mb-8 text-5xl font-semibold">About</h2>
+          <h2 className="mb-8 text-5xl font-semibold text-primary">About</h2>
           <div className="max-w-8xl mb-6 flex flex-wrap justify-center gap-10 space-x-4">
             <Image
               src="/moul-hanout-about.png"
@@ -139,8 +139,10 @@ export default function Home() {
         </section>
 
         <section className="flex min-h-200 flex-wrap items-center justify-center gap-20 p-10">
-          <div className="flex max-w-5xl flex-col items-center space-y-6">
-            <h2 className="text-3xl font-semibold">Catering</h2>
+          <div className="flex max-w-5xl flex-col space-y-6">
+            <h2 className="text-center text-4xl font-semibold text-primary">
+              Catering
+            </h2>
             <p className="w-full max-w-2xl text-lg">
               Elevate your next event with the rich flavors of Morocco. At Moul
               Hanout, we offer catering services that bring the essence of our
@@ -150,9 +152,17 @@ export default function Home() {
               hospitality of Moroccan cuisine. Let us take care of the food
               while you enjoy your special occasion.
             </p>
+            <Link
+              href={routes.catering}
+              className="text-lg font-semibold text-primary hover:text-primary-dark"
+            >
+              Learn More &#8594;
+            </Link>
           </div>
-          <div className="flex max-w-5xl flex-col items-center space-y-6">
-            <h2 className="text-3xl font-semibold">Grocery</h2>
+          <div className="flex max-w-5xl flex-col space-y-6">
+            <h2 className="text-center text-4xl font-semibold text-primary">
+              Grocery
+            </h2>
             <p className="w-full max-w-2xl text-lg">
               Explore our grocery section, where you can find a wide range of
               authentic Moroccan ingredients. From exotic spices to specialty
@@ -160,11 +170,19 @@ export default function Home() {
               Morocco in your own kitchen. Our knowledgeable staff is always
               available to help you find what you need and provide cooking tips.
             </p>
+            <Link
+              href={routes.grocery}
+              className="text-lg font-semibold text-primary hover:text-primary-dark"
+            >
+              Learn More &#8594;
+            </Link>
           </div>
         </section>
 
         <section className="my-10 flex min-h-200 flex-col items-center justify-center space-y-6 p-4">
-          <h2 className="mb-10 text-3xl font-semibold">Testimonials</h2>
+          <h2 className="mb-10 text-4xl font-semibold text-primary">
+            Testimonials
+          </h2>
           <div className="flex flex-wrap justify-center gap-20">
             {testimonials.map((testimonial, index) => (
               <Testamonial
