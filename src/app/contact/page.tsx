@@ -19,27 +19,34 @@ export default function Contact() {
           </p>
         </div>
 
-        <form className="w-full max-w-3xl rounded-lg bg-secondary p-6 shadow-lg">
+        <form
+          name="contact"
+          className="w-full max-w-3xl rounded-lg bg-secondary p-6 shadow-lg"
+          method="POST"
+          data-netlify="true"
+        >
           <div className="mb-4">
             <label htmlFor="name" className="mb-2 block text-lg font-semibold">
-              Name
+              Name <span className="text-red-500">*</span>
             </label>
             <input
               type="text"
               id="name"
               name="name"
+              placeholder="John Doe"
               required
               className="w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-primary focus:outline-none"
             />
           </div>
           <div className="mb-4">
             <label htmlFor="email" className="mb-2 block text-lg font-semibold">
-              Email
+              Email <span className="text-red-500">*</span>
             </label>
             <input
               type="email"
               id="email"
               name="email"
+              placeholder="johndoe@gmail.com"
               required
               className="w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-primary focus:outline-none"
             />
@@ -49,13 +56,14 @@ export default function Contact() {
               htmlFor="message"
               className="mb-2 block text-lg font-semibold"
             >
-              Message
+              Message <span className="text-red-500">*</span>
             </label>
             <textarea
               id="message"
               name="message"
               rows={5}
               required
+              placeholder="Your message here..."
               className="w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-primary focus:outline-none"
             ></textarea>
           </div>
