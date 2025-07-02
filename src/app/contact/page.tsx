@@ -27,6 +27,7 @@ export default function Contact() {
           method="POST"
           data-netlify="true"
         >
+          <input type="hidden" name="form-name" value="contact" />
           <div className="mb-4">
             <label htmlFor="name" className="mb-2 block text-lg font-semibold">
               Name <span className="text-red-500">*</span>

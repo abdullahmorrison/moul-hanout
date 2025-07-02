@@ -15,7 +15,13 @@ export default function Catering() {
           discuss your catering needs and let us bring the flavors of Morocco to
           your event.
         </p>
-        <form className="w-full max-w-3xl rounded-lg bg-secondary p-6 shadow-lg">
+        <form
+          className="w-full max-w-3xl rounded-lg bg-secondary p-6 shadow-lg"
+          name="catering"
+          method="POST"
+          data-netlify="true"
+        >
+          <input type="hidden" name="form-name" value="catering" />
           <div className="mb-4">
             <label htmlFor="name" className="mb-2 block text-lg font-semibold">
               Name <span className="text-red-500">*</span>
