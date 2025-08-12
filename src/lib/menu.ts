@@ -54,7 +54,7 @@ const menu: menuCategoryType[] = [
         price: 3.95,
       },
       {
-        name: "Signrature Salad",
+        name: "Signature Salad",
         description: "Fresh salad with a unique Moroccan twist.",
         price: 7.95,
       },
