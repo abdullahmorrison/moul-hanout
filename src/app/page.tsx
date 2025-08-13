@@ -61,29 +61,42 @@ export default function Home() {
 
       <main>
         <section className="mt-10 flex min-h-200 flex-col items-center justify-center space-y-6 p-4">
-          <h2 className="mb-8 text-5xl font-semibold text-primary">About</h2>
-          <div className="max-w-8xl mb-6 flex flex-wrap justify-center gap-10 space-x-4">
+          <h2 className="mb-8 text-5xl font-semibold text-primary">About Us</h2>
+          <div className="max-w-8xl mb-6 flex flex-wrap justify-center items-start gap-10 space-x-4">
             <Image
-              src="/moul-hanout-about.png"
-              alt="Moul Hanout Logo"
-              className="rounded-xl shadow-lg"
-              width={400}
+              src="/moul-hanout-about.webp"
+              alt="Moul Hanout About"
+              className="rounded-xl shadow-lg aspect-square object-cover"
+              width={450}
               height={400}
             />
-            <p className="max-w-2xl text-lg">
-              Experience the magic of Morocco at Moul Hanout, where the vibrant
-              spirit of the souks meets the warmth of a family-owned eatery.
-              Nestled within our doors, you&apos;ll find more than just a
-              restaurant — we&apos;re a bustling grocery hub, a cozy coffee bar,
-              and a delightful pastry haven, all infused with the rich flavors
-              and traditions of Morocco. Indulge in our signature sandwiches and
-              savory tagines, crafted with care and bursting with authentic
-              Moroccan spices. From the moment you step inside, you&apos;ll be
-              transported to a world of culinary delights, where every dish
-              tells a story and every meal is a celebration of Moroccan
-              hospitality and heritage. Join us at Moul Hanout and embark on a
-              culinary journey like no other.
-            </p>
+
+            <div className="flex flex-col space-y-10">
+              <p className="max-w-2xl text-lg">
+                Experience the magic of Morocco at Moul Hanout, where the
+                vibrant spirit of the souks meets the warmth of a family-owned
+                eatery. Nestled within our doors, you&apos;ll find more than
+                just a restaurant — we&apos;re a bustling grocery hub, a cozy
+                coffee bar, and a delightful pastry haven, all infused with the
+                rich flavors and traditions of Morocco.
+              </p>
+              <p className="max-w-2xl text-lg">
+                Indulge in our signature sandwiches and savory tagines, crafted
+                with care and bursting with authentic Moroccan spices. From the
+                moment you step inside, you&apos;ll be transported to a world of
+                culinary delights, where every dish tells a story and every meal
+                is a celebration of Moroccan hospitality and heritage.
+              </p>
+              <p className="max-w-2xl text-lg">
+                Join us at Moul Hanout and embark on a culinary journey like no
+                other.
+              </p>
+            </div>
+
+            <video loop autoPlay muted playsInline controls className="max-h-150 rounded-lg shadow-xl">
+              <source src="/moul-hanout-instagram-promo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </section>
 
