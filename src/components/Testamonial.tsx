@@ -26,7 +26,7 @@ export default function Testamonial({
           ))}
       </div>
       <p className="h-36 overflow-hidden text-ellipsis text-gray-700">
-        {testimonial}
+        &quot;{testimonial}&quot;
       </p>
     </div>
   );
