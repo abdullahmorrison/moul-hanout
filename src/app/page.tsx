@@ -63,13 +63,14 @@ export default function Home() {
         <section className="mt-10 flex min-h-200 flex-col items-center justify-center space-y-6 p-4">
           <h2 className="mb-8 text-5xl font-semibold text-primary">About Us</h2>
           <div className="max-w-8xl mb-6 flex flex-wrap justify-center items-start gap-10 space-x-4">
-            <Image
-              src="/moul-hanout-about.webp"
-              alt="Moul Hanout About"
-              className="rounded-xl shadow-lg aspect-square object-cover"
-              width={450}
-              height={400}
-            />
+            <div className="relative w-full max-w-100 aspect-square overflow-hidden rounded-xl shadow-lg">
+              <Image
+                src="/moul-hanout-about.webp"
+                alt="Moul Hanout About"
+                className="object-cover"
+                fill
+              />
+            </div>
 
             <div className="flex flex-col space-y-10">
               <p className="max-w-2xl text-lg">
