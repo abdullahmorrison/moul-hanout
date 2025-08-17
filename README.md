@@ -1,4 +1,6 @@
 # Moul Hanout
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2fc9b8eb-5d64-4a2d-bd37-5a61f785a43b/deploy-status)](https://app.netlify.com/projects/moulhanoutdemo/deploys)
+
 This is the website for the restaurant Moul Hanout, located in Ottawa Ontario Canada. The site is built using Next.js and Tailwind CSS.
 
 ## Setup
