@@ -1,6 +1,9 @@
+import { useNetlifyForm } from '@netlify/next-runtime/form'
 import Image from "next/image";
 
 export default function Catering() {
+  const { formProps, handleSubmit } = useNetlifyForm({ name: 'catering' })
+
   return (
     <div className="flex items-center justify-center gap-10 p-4 max-lg:flex-wrap">
       <div className="flex flex-col">
@@ -20,6 +23,8 @@ export default function Catering() {
           name="catering"
           method="POST"
           data-netlify="true"
+          {...formProps}
+          onSubmit={handleSubmit}
         >
           <input type="hidden" name="form-name" value="catering" />
           <div className="mb-4">

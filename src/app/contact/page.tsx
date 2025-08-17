@@ -1,6 +1,9 @@
+import { useNetlifyForm } from '@netlify/next-runtime/form'
 import Footer from "@/components/Footer";
 
 export default function Contact() {
+  const { formProps, handleSubmit } = useNetlifyForm({ name: 'contact' })
+
   return (
     <div className="flex min-h-screen flex-col">
       <h2 className="mt-10 text-center text-5xl font-bold text-primary md:my-10">
@@ -26,6 +29,8 @@ export default function Contact() {
           className="w-full max-w-3xl rounded-lg bg-secondary p-6 shadow-lg"
           method="POST"
           data-netlify="true"
+          {...formProps}
+          onSubmit={handleSubmit}
         >
           <input type="hidden" name="form-name" value="contact" />
           <div className="mb-4">
