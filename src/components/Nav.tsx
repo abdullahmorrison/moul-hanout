@@ -11,7 +11,7 @@ export default function Nav() {
 
   return (
     <>
-      <nav className="relative flex shrink-0 items-center justify-between bg-secondary p-6 text-2xl font-bold text-primary shadow-md">
+      <nav className="relative flex shrink-0 items-center justify-between bg-secondary p-4 text-2xl font-bold text-primary shadow-md">
         <Link href="/" className="text-lg">
           <div className="flex h-15 w-15 flex-col items-center justify-center rounded-[50%] border-2 border-white bg-primary p-2 text-white outline-2 outline-primary md:h-20 md:w-20">
             <span>حلال</span>
