@@ -63,7 +63,7 @@ export default function Home() {
         <section className="mt-10 flex min-h-200 flex-col items-center justify-center space-y-6 p-4">
           <h2 className="mb-8 text-5xl font-semibold text-primary">About Us</h2>
           <div className="max-w-8xl mb-6 flex flex-wrap items-start justify-center gap-10 space-x-4">
-            <div className="relative aspect-square max-md:w-full w-md overflow-hidden rounded-xl shadow-lg">
+            <div className="relative aspect-square max-md:w-full w-sm overflow-hidden rounded-xl shadow-lg">
               <Image
                 src="/moul-hanout-about.webp"
                 alt="Moul Hanout About"
@@ -127,7 +127,7 @@ export default function Home() {
                   slidesToSlide: 2, // optional, default to 1.
                 },
                 tablet: {
-                  breakpoint: { max: 1024, min: 464 },
+                  breakpoint: { max: 1350, min: 464 },
                   items: 2,
                   slidesToSlide: 2, // optional, default to 1.
                 },
@@ -138,7 +138,7 @@ export default function Home() {
                 },
               }}
               infinite={true}
-              removeArrowOnDeviceType={["tablet", "mobile"]}
+              removeArrowOnDeviceType={["mobile"]}
               autoPlay={true}
               autoPlaySpeed={5000}
             >
