@@ -1,6 +1,20 @@
+"use client";
 import Footer from "@/components/Footer";
 
 export default function Contact() {
+  const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    // Convert FormData to URLSearchParams safely
+    const params = new URLSearchParams(
+      Array.from(formData.entries()) as [string, string][],
+    );
+    await fetch("/forms/__contact.html", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: params,
+    });
+  };
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -24,9 +38,8 @@ export default function Contact() {
 
         <form
           name="contact"
+          onSubmit={handleFormSubmit}
           className="w-full max-w-3xl rounded-lg bg-secondary p-6 shadow-lg"
-          method="POST"
-          data-netlify="true"
         >
           <input type="hidden" name="form-name" value="contact" />
           <div className="mb-4">

@@ -1,6 +1,20 @@
+"use client";
 import Image from "next/image";
 
 export default function Catering() {
+  const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    // Convert FormData to URLSearchParams safely
+    const params = new URLSearchParams(
+      Array.from(formData.entries()) as [string, string][],
+    );
+    await fetch("/forms/__catering.html", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: params,
+    });
+  };
 
   return (
     <div className="flex items-center justify-center gap-10 p-4 max-lg:flex-wrap">
@@ -19,8 +33,7 @@ export default function Catering() {
         <form
           className="w-full max-w-3xl rounded-lg bg-secondary p-6 shadow-lg"
           name="catering"
-          method="POST"
-          data-netlify="true"
+          onSubmit={handleFormSubmit}
         >
           <input type="hidden" name="form-name" value="catering" />
           <div className="mb-4">
