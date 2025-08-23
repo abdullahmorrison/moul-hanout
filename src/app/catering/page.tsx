@@ -1,20 +1,35 @@
 "use client";
+import { useAlert } from "@/context/AlertContext";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Catering() {
+  const { showAlert } = useAlert();
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+
   const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    setIsButtonDisabled(true);
+    const form = event.currentTarget;
+
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+    const formData = new FormData(form);
     // Convert FormData to URLSearchParams safely
     const params = new URLSearchParams(
       Array.from(formData.entries()) as [string, string][],
     );
-    await fetch("/forms/__catering.html", {
+    await fetch("/forms/__contact.html", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: params,
-    });
+    })
+      .then(() => {
+        form.reset();
+        showAlert("Message Sent", "success");
+      })
+      .catch(() => showAlert("Something Went Wrong", "error"))
+      .finally(() => setIsButtonDisabled(false));
   };
+
 
   return (
     <div className="flex items-center justify-center gap-10 p-4 max-lg:flex-wrap">
@@ -96,7 +111,8 @@ export default function Catering() {
           </div>
           <button
             type="submit"
-            className="w-full rounded-lg bg-primary py-3 text-white transition-colors duration-200 hover:cursor-pointer hover:bg-primary-dark"
+            className={`${isButtonDisabled ? "bg-gray-500 hover:cursor-not-allowed" : "bg-primary hover:cursor-pointer hover:bg-primary-dark"} w-full rounded-lg py-3 text-white transition-colors duration-200`}
+            disabled={isButtonDisabled}
           >
             Send Message
           </button>
