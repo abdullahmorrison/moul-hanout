@@ -17,7 +17,7 @@ export default function Catering() {
     const params = new URLSearchParams(
       Array.from(formData.entries()) as [string, string][],
     );
-    await fetch("/forms/__catering.html", {
+    await fetch("/forms/__forms.html", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: params,
