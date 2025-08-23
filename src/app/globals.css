@@ -16,10 +16,16 @@
   --color-primary-text: var(--primary-text);
 
   --animate-infinite-scroll: infinite-scroll 45s linear infinite;
+  --animate-slide-in: slide-in 200ms ease-in;
 
   @keyframes infinite-scroll {
     0% { transform: translateX(0); }
     100% { transform: translateX(-100%); }
+  }
+
+  @keyframes slide-in {
+    0% { transform: translateY(-50%); opacity: 0; }
+    100% { transform: translateY(10); opacity: 1; }
   }
 }
 
