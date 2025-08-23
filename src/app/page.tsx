@@ -138,7 +138,6 @@ export default function Home() {
                 },
               }}
               infinite={true}
-              removeArrowOnDeviceType={["mobile"]}
               autoPlay={true}
               autoPlaySpeed={5000}
             >
