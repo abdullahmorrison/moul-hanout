@@ -20,7 +20,7 @@ export default function Nav() {
         </Link>
 
         <div
-          className={`${isOpen ? "block" : "max-md:opacity-0"} absolute top-25 left-0 z-50 flex w-full flex-col items-center justify-center gap-4 bg-white p-4 transition-all duration-300 ease-in-out md:static md:w-auto md:flex-row md:items-center md:justify-center md:bg-transparent md:p-0`}
+          className={`${isOpen ? "block" : "max-md:opacity-0"} absolute top-20 left-0 z-50 flex w-full flex-col items-center justify-center gap-4 bg-white p-4 transition-all duration-300 ease-in-out md:static md:w-auto md:flex-row md:items-center md:justify-center md:bg-transparent md:p-0`}
         >
           <Link
             href={routes.home}
