@@ -5,9 +5,9 @@ const testimonials = [
     "testimonial": "Great food and customer services was above and beyond. Moroccan ambiance, family friendly and they have some divers Moroccan goodies as well. I'll definitely go there again, recommended"
   },
   {
-    "name": "Kevin Wlison",
-    "rating": 4,
-    "testimonial": "Food was good and my drink tasty apple soda  yum  price is 👍"
+    "name": "Jihad Elk",
+    "rating": 5,
+    "testimonial": "I had an amazing experience at this authentic Moroccan restaurant! The couscous was absolutely delicious and flavorful just like the one I had back home."
   },
   {
     "name": "Yahya Johnson Al-meko",
