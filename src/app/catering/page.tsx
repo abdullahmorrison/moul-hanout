@@ -20,7 +20,7 @@ export default function Catering() {
     await fetch("/__forms.html", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: params,
+      body: params.toString(),
     })
       .then(() => {
         form.reset();
