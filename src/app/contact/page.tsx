@@ -1,10 +1,18 @@
 "use client";
 import Footer from "@/components/Footer";
+import { useAlert } from "@/context/AlertContext";
+import { useState } from "react";
 
 export default function Contact() {
+  const { showAlert } = useAlert();
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+
   const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    setIsButtonDisabled(true);
+    const form = event.currentTarget;
+
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+    const formData = new FormData(form);
     // Convert FormData to URLSearchParams safely
     const params = new URLSearchParams(
       Array.from(formData.entries()) as [string, string][],
@@ -13,7 +21,13 @@ export default function Contact() {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: params,
-    });
+    })
+      .then(() => {
+        form.reset();
+        showAlert("Message Sent", "success");
+      })
+      .catch(() => showAlert("Something Went Wrong", "error"))
+      .finally(() => setIsButtonDisabled(false));
   };
 
   return (
@@ -86,7 +100,8 @@ export default function Contact() {
           </div>
           <button
             type="submit"
-            className="w-full rounded-lg bg-primary py-3 text-white transition-colors duration-200 hover:cursor-pointer hover:bg-primary-dark"
+            className={`${isButtonDisabled ? "bg-gray-500 hover:cursor-not-allowed" : "bg-primary hover:cursor-pointer hover:bg-primary-dark"} w-full rounded-lg py-3 text-white transition-colors duration-200`}
+            disabled={isButtonDisabled}
           >
             Send Message
           </button>
